@@ -7,7 +7,7 @@ internal let main = DispatchQueue.main
 extension ViewModel {
     
     public func bind<Value>(
-        _ keyPath: KeyPath<ViewModel, Bindable<Value>>,
+        _ keyPath: KeyPath<Self, Bindable<Value>>,
         _ action: @escaping Action<Value>
     ) {
         let bindable = self[keyPath: keyPath]
@@ -15,7 +15,7 @@ extension ViewModel {
     }
     
     public func bind(
-        _ keyPath: KeyPath<ViewModel, Bindable<String>>,
+        _ keyPath: KeyPath<Self, Bindable<String>>,
         to label: UILabel
     ) {
         let bindable = self[keyPath: keyPath]
@@ -25,7 +25,7 @@ extension ViewModel {
     }
     
     public func bind(
-        _ keyPath: KeyPath<ViewModel, Bindable<String>>,
+        _ keyPath: KeyPath<Self, Bindable<String>>,
         to button: UIButton
     ) {
         let bindable = self[keyPath: keyPath]
@@ -35,7 +35,7 @@ extension ViewModel {
     }
     
     public func bind(
-        _ keyPath: KeyPath<ViewModel, Bindable<Bool>>,
+        _ keyPath: KeyPath<Self, Bindable<Bool>>,
         to button: UIButton
     ) {
         let bindable = self[keyPath: keyPath]
@@ -45,7 +45,7 @@ extension ViewModel {
     }
     
     public func bind(
-        _ keyPath: KeyPath<ViewModel, Bindable<Bool>>,
+        _ keyPath: KeyPath<Self, Bindable<Bool>>,
         to _switch: UISwitch
     ) {
         let bindable = self[keyPath: keyPath]

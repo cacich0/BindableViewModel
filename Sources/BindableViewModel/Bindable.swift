@@ -23,5 +23,6 @@ public final class Bindable<Value: Equatable> {
     
     internal func bind(_ action: @escaping Action<Value>) {
         onChange = action
+        action(wrappedValue)
     }
 }
